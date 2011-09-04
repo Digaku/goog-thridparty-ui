@@ -8,7 +8,9 @@ goog.require('goog.style');
 goog.require('goog.ui.Component');
 
 
-
+/**
+ * @constructor
+ */
 goog.ui.FullscreenLoading = function(caption, auto_show, loading_image, opt_domHelpers){
 	goog.ui.Component.call(this, opt_domHelpers);
 	this.auto_show_ = auto_show;

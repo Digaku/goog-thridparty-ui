@@ -6,7 +6,9 @@ goog.provide('goog.ui.Loading');
 goog.require('goog.dom');
 goog.require('goog.ui.Component');
 
-
+/**
+ * @constructor
+ */
 goog.ui.Loading = function(elm_id, opt_base_url, opt_place_inner, opt_domHelpers){
 	goog.ui.Component.call(this, opt_domHelpers);
 	
