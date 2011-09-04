@@ -9,15 +9,18 @@ goog.require('goog.ui.Component');
 
 
 
-goog.ui.FullscreenLoading = function(caption, auto_show, opt_domHelpers){
+goog.ui.FullscreenLoading = function(caption, auto_show, loading_image, opt_domHelpers){
 	goog.ui.Component.call(this, opt_domHelpers);
 	this.auto_show_ = auto_show;
 	this.caption_ = caption || 'Loading...';
+	this.loading_image_ = loading_image || goog.ui.FullscreenLoading.loading_image_;
 	if(this.auto_show_ == true){
 		this.render();
 	}
 };
 goog.inherits(goog.ui.FullscreenLoading, goog.ui.Component);
+
+goog.ui.FullscreenLoading.loading_image_ = 'http://cdn01.digaku.com/data/c/6d781b369a10e4f8c97c9dbe81daca5e.gif';
 
 goog.ui.FullscreenLoading.prototype.render = function(){
 	
@@ -28,7 +31,7 @@ goog.ui.FullscreenLoading.prototype.render = function(){
 	this.element_ = goog.dom.createElement('div');
 	this.bgElm_ = goog.dom.createElement('div');
 	
-	this.element_.innerHTML = '<div style="float: left;"><img src="http://www.intel.com/newsroom/assets/images/loading-spinner_32x32.gif" /></div><div style="float: left; margin-top: 10px; margin-left: 10px;">' + this.caption_ + '</div>';
+	this.element_.innerHTML = '<div style="float: left;"><img src="'+goog.ui.FullscreenLoading.loading_image_+'" /></div><div style="float: left; margin-top: 10px; margin-left: 10px;">' + this.caption_ + '</div>';
 	
 	goog.dom.appendChild(document.body, this.element_);
 	goog.dom.appendChild(document.body, this.bgElm_);
